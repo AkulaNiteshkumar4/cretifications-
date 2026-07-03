@@ -1,0 +1,136 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#6a11cb,#2575fc);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.certifications{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:48px;
+    color:#fff;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+.section-title span{
+    color:#00e5ff;
+}
+
+.section-subtitle{
+    text-align:center;
+    color:#ddd;
+    margin-bottom:50px;
+    font-size:18px;
+}
+
+.certificates{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.certificate-card{
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:20px;
+    padding:30px;
+    color:#fff;
+    transition:.5s;
+    position:relative;
+    overflow:hidden;
+    animation:float 5s ease-in-out infinite;
+}
+
+.certificate-card::before{
+    content:"";
+    position:absolute;
+    top:-100%;
+    left:-100%;
+    width:200%;
+    height:200%;
+    background:linear-gradient(45deg,
+    transparent,
+    rgba(255,255,255,.15),
+    transparent);
+    transform:rotate(45deg);
+    transition:.7s;
+}
+
+.certificate-card:hover::before{
+    top:100%;
+    left:100%;
+}
+
+.certificate-card:hover{
+    transform:translateY(-15px) scale(1.03);
+    box-shadow:0 15px 40px rgba(0,229,255,.35);
+}
+
+.certificate-card h3{
+    color:#00e5ff;
+    margin-bottom:18px;
+    font-size:24px;
+}
+
+.certificate-card p{
+    margin:10px 0;
+    line-height:1.8;
+    color:#f1f1f1;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 28px;
+    text-decoration:none;
+    border-radius:50px;
+    color:#fff;
+    background:linear-gradient(45deg,#00c6ff,#0072ff);
+    font-weight:600;
+    transition:.4s;
+}
+
+.btn:hover{
+    background:linear-gradient(45deg,#ff512f,#dd2476);
+    transform:scale(1.08);
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+@media(max-width:768px){
+    .section-title{
+        font-size:36px;
+    }
+
+    .certificate-card{
+        padding:25px;
+    }
+}
